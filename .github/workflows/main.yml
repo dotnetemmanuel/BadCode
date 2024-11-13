@@ -16,7 +16,7 @@ jobs:
     - name: Step that can fail
       run: |
         echo "Failcheck..."
-        if [ "${{inputs.should_fail}} = "yes" ]; then
+        if [ "${{inputs.should_fail}}" = "yes" ]; then
           exit 1
         fi
         
