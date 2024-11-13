@@ -26,7 +26,7 @@ jobs:
     - name: Print job context
       run: echo "${{toJson(job)}}
     - name: Print runner context
-      run: echo "${{toJson(runner}}
+      run: echo "${{toJson(runner)}}
     - name: Print job status
       run: echo "${{job.status}}
     - name: Print runner OS
