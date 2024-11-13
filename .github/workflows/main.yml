@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print job context
-      run: echo "${{toJson(job}}
+      run: echo "${{toJson(job)}}
     - name: Print runner context
       run: echo "${{toJson(runner}}
     - name: Print job status
