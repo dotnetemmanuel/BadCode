@@ -20,14 +20,30 @@ jobs:
     - name: Print event
       run: echo "${{github.event}}"
 
-  job-context:
+  job-and-runner-context:
     runs-on: ubuntu-latest
     steps:
     - name: Print job context
-      run: echo "${{toJson(job)}}
+      run: echo "${{toJson(job)}}"
     - name: Print runner context
-      run: echo "${{toJson(runner)}}
+      run: echo "${{toJson(runner)}}"
     - name: Print job status
-      run: echo "${{job.status}}
+      run: echo "${{job.status}}"
     - name: Print runner OS
-      run: echo "${{runner.os}}
+      run: echo "${{runner.os}}"
+
+  all-good:
+    runs-on: ubuntu-latest
+    needs: [build-project, github-context, job-and-runner-context]
+    if: success()
+    steps:
+    - name: Print all good
+      run: echo "All good..."
+
+  failure-handler:
+    runs-on: ubuntu-latest
+    needs: [build-project, github-context, job-and-runner-context]
+    if: failure()
+    steps:
+    - name: Echo error
+      run: echo "Error!"
