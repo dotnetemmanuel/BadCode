@@ -17,7 +17,8 @@ jobs:
     needs: build-and-test
     if: success()
     runs-on: ubuntu-latest
+    environment: Test
     env: 
-      SITE_URL: ${{vars.MY_VARIABLE}}
+      SITE_URL: ${{ vars.MY_VARIABLE }}
     steps:
       - run: echo "deploying to $SITE_URL"
