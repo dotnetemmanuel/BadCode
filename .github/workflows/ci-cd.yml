@@ -10,4 +10,11 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - run: dotnet build
+      - run: dotnet test
+
+  deploy:
+    runs-on: ubuntu-latest
+    env: 
+      SITE_URL: ${{vars.SITE_URL}}
+    steps:
+      - run: echo "deploying to $SITE_URL"
