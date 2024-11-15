@@ -1,0 +1,13 @@
+name: ci-cd
+on: 
+  pull_request:
+    types: 
+      - opened
+    branches: 
+      - "main"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: dotnet build
