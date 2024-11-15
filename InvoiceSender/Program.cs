@@ -1,5 +1,5 @@
 ﻿// This is NOT how you should be coding!
-//now then what you say? huh?
+//now then what you say? hu
 
 
 namespace InvoiceSender;
